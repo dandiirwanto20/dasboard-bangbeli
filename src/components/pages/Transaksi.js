@@ -1,40 +1,40 @@
-import {Breadcrumbs, Typography, Link} from '@mui/material'
+import {Breadcrumbs, Typography, Link, Box} from '@mui/material'
 import TransaksiGraph from './pages-components/TransaksiGraph'
+import TransaksiTable from './pages-components/TransaksiTable'
 
 export default function Transaksi(){
     return (
         <>
             <header className='bg-green-600 text-center p-3'>
-                <Typography color="white">
-                    <span className='font-semibold'>
-                        Saldo Server : Rp142.500.000,00
-                    </span>
+                <Typography color="white" fontWeight={600}>
+                    Saldo Server : Rp142.500.000,00
                 </Typography>
             </header>
-            <div id='bread-crumbs' className='ml-3 mt-7'>
+
+            {/* BreadCrumbs */}
+            <Box marginLeft={3} marginTop={4}>
                 <Breadcrumbs separator="›" aria-label="breadcrumb">
                     <Link underline="none" color="#212B36" href="/" >
-                        <div className='font-bold hover:underline hover:underline-offset-4'>
-                            Dashboard
+                        <div className='hover:underline hover:underline-offset-4'>
+                            <b>Dashboard</b>
                         </div>
                     </Link>
                     <Typography color="#2A99FF">
-                        <div className='font-bold'>
-                            Transaksi
-                        </div>
+                        <b>Transaksi</b>
                     </Typography>
                 </Breadcrumbs>
-            </div>
-            <div id='headline-page' className='mt-4 ml-3'>
-                <Typography variant="h4">
-                    <span className='font-bold'>
-                        Transaksi
-                    </span>
-                </Typography>
-            </div>
-            <div id='graph' className='ml-3 mt-4'>
+            </Box>
+            {/* BreadCrumbs */}
+                
+            <Box marginLeft={3} marginTop={4}>
+                {/* Transaksi Section Graph */}
                 <TransaksiGraph />
-            </div>
+                {/* Transaksi Section Graph */}
+
+                {/* Transaksi Table */}
+                <TransaksiTable />
+                {/* Transaksi Table */}
+            </Box>
         </>
     )
 }

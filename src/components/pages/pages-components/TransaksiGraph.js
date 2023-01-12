@@ -1,22 +1,28 @@
 import { Box, CircularProgress, Grid, LinearProgress, Typography } from "@mui/material";
-// import TotalLabaTransaksiGraph from "./TotalLabaTransaksiGraph";
 import { TrendingUp, Circle } from '@mui/icons-material';
 
 export default function TransaksiGraph() {
   return (
     <>
-      <Box margin={0.9}>
-        <Grid container>
+      <Box marginBottom={4}>
+        <Typography variant="h4">
+          {/* <span className='font-bold'> */}
+          <b>Transaksi</b>
+          {/* </span> */}
+        </Typography>
+        <Box margin={0.9}>
+          <Grid container>
 
-          {/* graph left side */}
-          <LeftGraph />
-          {/* graph left side */}
+            {/* graph left side */}
+            <LeftGraph />
+            {/* graph left side */}
 
-          {/* graph right side */}
-          <RightGraph />
-          {/* graph righ side */}
+            {/* graph right side */}
+            <RightGraph />
+            {/* graph righ side */}
 
-        </Grid>
+          </Grid>
+        </Box>
       </Box>
     </>
   );
@@ -37,7 +43,7 @@ function LeftGraph(){
           </Typography>
 
           <Box paddingX={2} paddingBottom={2} textAlign='center' mt={4}>
-            <CircularProgress variant="determinate" value={90} size={120} />
+            <CircularProgress variant="determinate" color="success" value={90} size={200} />
           </Box>
           <Box sx={{ borderTop: 2, borderTopColor:'#DFE7E8', textAlign:'center', paddingTop:2 }}>
             <Typography variant="subtitle2"><Circle sx={{ color:'#00AB55', fontSize: 20}} /> Total Laba Keseluruhan</Typography>
@@ -122,7 +128,24 @@ function DoubleGridTransaksi(){
             }}
             padding={2}
           >
-            <TrendingUp sx={{ color:'#00AB55', fontSize: 80}} />
+            <Grid item container>
+              <Grid item xs={2}>
+                <TrendingUp sx={{ color:'#00AB55', fontSize: 80}} />
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ 
+                  color:'#ffffff',
+                  fontSize:30,
+                  marginLeft:4,
+                  fontWeight:'bold'
+                }}>
+                  38,000
+                  <Typography>
+                      Total Transaksi
+                  </Typography>
+                </Typography>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
         <Grid item xs={6} paddingLeft={0.5}>
@@ -134,7 +157,24 @@ function DoubleGridTransaksi(){
             }}
             padding={2}
           >
-            <TrendingUp sx={{ color:'#FFC107', fontSize: 80}} />
+            <Grid item container>
+              <Grid item xs={2}>
+                <TrendingUp sx={{ color:'#FFC107', fontSize: 80}} />
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ 
+                  color:'#ffffff',
+                  fontSize:30,
+                  marginLeft:4,
+                  fontWeight:'bold'
+                }}>
+                  38,000
+                  <Typography>
+                    Total Transaksi
+                  </Typography>
+                </Typography>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
       </Grid>
